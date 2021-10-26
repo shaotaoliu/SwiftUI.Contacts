@@ -3,23 +3,40 @@ import SwiftUI
 struct ContactEditView: View {
     
     @Environment(\.presentationMode) private var presentationMode
-    @ObservedObject var contact: ContactViewModel
+    @EnvironmentObject var contactListVM: ContactListViewModel
+    @Binding var contact: ContactViewModel
     @State var showCalendar = false
+    @State var showImagePicker = false
     let operation: Operation
     
     var body: some View {
         NavigationView {
             VStack {
                 VStack {
-                    Image("photo-placeholder")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200, alignment: .center)
-                        .clipped()
-                        .padding(.top)
+                    if let photo = contact.photo {
+                        Image(uiImage: photo)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200, alignment: .center)
+                            .clipped()
+                            .padding(.top)
+                    }
+                    else {
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200, alignment: .center)
+                            .opacity(0.3)
+                            .border(.gray, width: 1)
+                            .clipped()
+                            .padding(.top)
+                    }
                     
-                    Button("Add Photo") {
-                        
+                    Button(contact.photo == nil ? "Add Photo" : "Change Photo") {
+                        showImagePicker = true
+                    }
+                    .sheet(isPresented: $showImagePicker) {
+                        AddImageView(selectedPhoto: $contact.photo)
                     }
                 }
                 
@@ -27,7 +44,7 @@ struct ContactEditView: View {
                     TextField("Name", text: $contact.name)
                     
                     HStack {
-                        TextField("Date of Birth", text: $contact.dobString)
+                        TextField("Birthday", text: $contact.dobString)
                             .disabled(true)
                         
                         Button(action: {
@@ -37,7 +54,7 @@ struct ContactEditView: View {
                         })
                             .buttonStyle(.borderless)
                             .sheet(isPresented: $showCalendar, content: {
-                                CalendarView(dobString: $contact.dobString)
+                                AddDOBView(dobString: $contact.dobString)
                             })
                         
                         Button(action: {
@@ -53,29 +70,31 @@ struct ContactEditView: View {
                     
                     VStack(alignment: .leading) {
                         Text("Address")
-                            .foregroundColor(.gray)
+                            //.foregroundColor(Color(red: 0.75, green: 0.75, blue: 0.75))
+                            .padding(.top, 3)
                         
                         TextEditor(text: $contact.address)
                             .frame(height: 90)
-                            .border(.gray)
+                            .border(Color(red: 0.88, green: 0.88, blue: 0.88))
                     }
                 }
             }
             .navigationTitle("\(operation == .add ? "New" : "Edit") Contact")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: cancelButton, trailing: saveButton)
+            .navigationBarItems(leading: CancelButton, trailing: SaveButton)
         }
     }
     
-    var cancelButton: some View {
+    var CancelButton: some View {
         Button("Cancel") {
             presentationMode.wrappedValue.dismiss()
         }
     }
     
-    var saveButton: some View {
+    var SaveButton: some View {
         Button("Save") {
             contact.save()
+            contactListVM.fetch()
             
             if !contact.hasError {
                 presentationMode.wrappedValue.dismiss()
@@ -91,8 +110,8 @@ struct ContactEditView: View {
 
 struct ContactEditView_Previews: PreviewProvider {
     static let manager = CoreDataManager(preview: true)
-    
     static var previews: some View {
         ContactEditView(contact: ContactViewModel(), operation: .add)
+            .environmentObject(ContactListViewModel())
     }
 }

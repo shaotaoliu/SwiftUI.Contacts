@@ -32,11 +32,13 @@ class CoreDataManager {
             contact = Contact(context: viewContext)
         }
         
-        // copy values from vm to model
+        // TODO: copy values from vm to model
         contact.name = vm.name
         contact.dob = vm.dobString.isEmpty ? nil : vm.dobString.toDate()
         contact.photo = vm.photo == nil ? nil : vm.photo!.pngData()
-        
+        contact.phone = vm.phone.isEmpty ? nil : vm.phone
+        contact.email = vm.email.isEmpty ? nil : vm.email
+        contact.address = vm.address.isEmpty ? nil : vm.address
         
         try viewContext.save()
     }

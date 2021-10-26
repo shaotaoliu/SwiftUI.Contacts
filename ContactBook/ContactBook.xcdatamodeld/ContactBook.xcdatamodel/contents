@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Contact" representedClassName="Contact" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
         <attribute name="phone" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="Binary"/>
     </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <elements>
-        <element name="Contact" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Contact" positionX="-45" positionY="9" width="128" height="119"/>
     </elements>
 </model>

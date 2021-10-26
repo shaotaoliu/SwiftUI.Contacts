@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CalendarView: View {
+struct AddDOBView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Binding var dobString: String
@@ -39,8 +39,8 @@ struct CalendarView: View {
     }
 }
 
-struct CalendarView_Previews: PreviewProvider {
+struct AddDOBView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView(dobString: .constant(""))
+        AddDOBView(dobString: .constant(""))
     }
 }

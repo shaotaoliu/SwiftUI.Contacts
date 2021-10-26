@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ImagePicker",
+        "repositoryURL": "https://github.com/shaotaoliu/SwiftUI.Package.ImagePicker.git",
+        "state": {
+          "branch": "main",
+          "revision": "52247c2e6d18431a7c9321aa20279e7cf597de27",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

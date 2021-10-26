@@ -1,18 +1,12 @@
 import Foundation
 
-class ContactListViewModel: ObservableObject {
+class ContactListViewModel: ViewModel {
     
     @Published var contacts: [ContactViewModel] = []
-    @Published var hasError = false
-    @Published var errorMessage: String? = nil {
-        didSet {
-            hasError = errorMessage != nil
-        }
-    }
-    
     private let manager = CoreDataManager.shared
     
-    init() {
+    override init() {
+        super.init()
         fetch()
     }
     

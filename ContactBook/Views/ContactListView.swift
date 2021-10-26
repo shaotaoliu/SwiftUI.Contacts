@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContactListView: View {
     
-    @ObservedObject var contactListVM = ContactListViewModel()
+    @EnvironmentObject var contactListVM: ContactListViewModel
     @State var searchText = ""
     @State var showAddSheet = false
     
@@ -21,7 +21,7 @@ struct ContactListView: View {
             List {
                 ForEach(contacts, id: \.id) { contact in
                     NavigationLink(destination: {
-                        ContactDetailView(contact: contact)
+                        ContactDetailView(contact: $contact)
                     }, label: {
                         Text(contact.name)
                     })
@@ -36,9 +36,7 @@ struct ContactListView: View {
             }, label: {
                 Image(systemName: "plus")
             }), trailing: EditButton())
-            .sheet(isPresented: $showAddSheet, onDismiss: {
-                contactListVM.fetch()
-            }) {
+            .sheet(isPresented: $showAddSheet) {
                 ContactEditView(contact: ContactViewModel(), operation: .add)
             }
         }
@@ -52,5 +50,6 @@ struct ContactListView: View {
 struct ContactListView_Previews: PreviewProvider {
     static var previews: some View {
         ContactListView()
+            .environmentObject(ContactListViewModel())
     }
 }
