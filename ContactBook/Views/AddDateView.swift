@@ -1,25 +1,25 @@
 import SwiftUI
 
-struct AddDOBView: View {
+struct AddDateView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @Binding var dobString: String
-    @State private var dob: Date = Date()
+    @Binding var dateString: String
+    @State private var date: Date = Date()
 
     var body: some View {
         NavigationView {
             VStack() {
-                DatePicker("", selection: $dob, displayedComponents: .date)
+                DatePicker("", selection: $date, displayedComponents: .date)
                     .datePickerStyle(.wheel)
                 
                 Spacer()
             }
-            .navigationTitle("Date of Birth")
+            .navigationTitle("Select Date")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: CancelButton, trailing: AddButton)
             .onAppear() {
-                if !dobString.isEmpty {
-                    dob = dobString.toDate()!
+                if !dateString.isEmpty {
+                    date = dateString.toDate()!
                 }
             }
         }
@@ -33,14 +33,14 @@ struct AddDOBView: View {
     
     var AddButton: some View {
         Button("Add") {
-            dobString = dateFormatter.string(from: dob)
+            dateString = dateFormatter.string(from: date)
             presentationMode.wrappedValue.dismiss()
         }
     }
 }
 
-struct AddDOBView_Previews: PreviewProvider {
+struct AddDateView_Previews: PreviewProvider {
     static var previews: some View {
-        AddDOBView(dobString: .constant(""))
+        AddDateView(dateString: .constant(""))
     }
 }

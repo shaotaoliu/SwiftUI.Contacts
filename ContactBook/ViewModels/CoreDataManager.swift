@@ -5,7 +5,6 @@ class CoreDataManager {
     
     static let shared = CoreDataManager()
     static let preview = CoreDataManager(preview: true)
-    
     private let viewContext: NSManagedObjectContext
     
     init(preview: Bool = false) {
@@ -22,31 +21,24 @@ class CoreDataManager {
         return contacts.map { ContactViewModel(contact: $0) }
     }
     
-    func save(vm: ContactViewModel) throws {
+    func save(contactVM: ContactViewModel) throws {
         var contact: Contact
         
-        if let id = vm.id {
+        if let id = contactVM.id {
             contact = try viewContext.existingObject(with: id) as! Contact
         }
         else {
             contact = Contact(context: viewContext)
         }
         
-        // TODO: copy values from vm to model
-        contact.name = vm.name
-        contact.dob = vm.dobString.isEmpty ? nil : vm.dobString.toDate()
-        contact.photo = vm.photo == nil ? nil : vm.photo!.pngData()
-        contact.phone = vm.phone.isEmpty ? nil : vm.phone
-        contact.email = vm.email.isEmpty ? nil : vm.email
-        contact.address = vm.address.isEmpty ? nil : vm.address
-        
+        contactVM.copyTo(contact)
         try viewContext.save()
     }
     
-    func delete(vms: [ContactViewModel]) throws {
+    func delete(contactVMs: [ContactViewModel]) throws {
         
-        for vm in vms {
-            let contact = try viewContext.existingObject(with: vm.id!)
+        for contactVM in contactVMs {
+            let contact = try viewContext.existingObject(with: contactVM.id!)
             viewContext.delete(contact)
         }
         

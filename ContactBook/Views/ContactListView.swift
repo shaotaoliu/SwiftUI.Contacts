@@ -2,16 +2,12 @@ import SwiftUI
 
 struct ContactListView: View {
     
-    @EnvironmentObject var contactListVM: ContactListViewModel
+    @EnvironmentObject var vm: ContactListViewModel
     @State var searchText = ""
     @State var showAddSheet = false
     
     var contacts: [ContactViewModel] {
-        if searchText.isEmpty {
-            return contactListVM.contacts
-        }
-        
-        return contactListVM.contacts.filter {
+        return searchText.isEmpty ? vm.contacts : vm.contacts.filter {
             $0.name.localizedCaseInsensitiveContains(searchText)
         }
     }
@@ -20,11 +16,9 @@ struct ContactListView: View {
         NavigationView {
             List {
                 ForEach(contacts, id: \.id) { contact in
-                    NavigationLink(destination: {
-                        ContactDetailView(contact: $contact)
-                    }, label: {
+                    NavigationLink(destination: ContactDetailView(contact: $vm.contacts[vm.contacts.firstIndex(where: { $0.id == contact.id })!])) {
                         Text(contact.name)
-                    })
+                    }
                 }
                 .onDelete(perform: deleteContacts)
             }
@@ -37,13 +31,13 @@ struct ContactListView: View {
                 Image(systemName: "plus")
             }), trailing: EditButton())
             .sheet(isPresented: $showAddSheet) {
-                ContactEditView(contact: ContactViewModel(), operation: .add)
+                ContactAddView()
             }
         }
     }
     
     private func deleteContacts(offsets: IndexSet) {
-        contactListVM.delete(contacts: offsets.map { contacts[$0] })
+        vm.delete(contactVMs: offsets.map { contacts[$0] })
     }
 }
 

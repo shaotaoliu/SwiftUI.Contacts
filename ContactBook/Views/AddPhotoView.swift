@@ -1,7 +1,7 @@
 import SwiftUI
 import ImagePicker
 
-struct AddImageView: View {
+struct AddPhotoView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject private var vm = AddImageViewModel()
@@ -39,7 +39,7 @@ struct AddImageView: View {
                         ImageLabel(title: "Photos", systemImage: "photo")
                     })
                 }
-                .sheet(isPresented: $vm.showCameraSheet) {
+                .sheet(isPresented: $vm.showSheet) {
                     ImagePicker(sourceType: vm.sourceType, selectedImage: $vm.selectedImage)
                         .ignoresSafeArea()
                 }
@@ -73,9 +73,9 @@ struct AddImageView: View {
     }
 }
 
-struct AddImageView_Previews: PreviewProvider {
+struct AddPhotoView_Previews: PreviewProvider {
     static var photo: UIImage?
     static var previews: some View {
-        AddImageView(selectedPhoto: .constant(photo))
+        AddPhotoView(selectedPhoto: .constant(photo))
     }
 }

@@ -7,29 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A69FE492728825B003D88F8 /* ContactAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE482728825B003D88F8 /* ContactAddView.swift */; };
+		4A69FE4C27289D5D003D88F8 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE4B27289D5D003D88F8 /* Operation.swift */; };
 		4A96E1CD27253FF100E66E2E /* ContactBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1CC27253FF100E66E2E /* ContactBookApp.swift */; };
 		4A96E1CF27253FF100E66E2E /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1CE27253FF100E66E2E /* ContactListView.swift */; };
 		4A96E1D127253FF800E66E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A96E1D027253FF800E66E2E /* Assets.xcassets */; };
 		4A96E1D427253FF800E66E2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A96E1D327253FF800E66E2E /* Preview Assets.xcassets */; };
 		4A96E1D627253FF800E66E2E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1D527253FF800E66E2E /* Persistence.swift */; };
 		4A96E1D927253FF800E66E2E /* ContactBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1D727253FF800E66E2E /* ContactBook.xcdatamodeld */; };
-		4A96E1E12725424C00E66E2E /* AddDOBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1E02725424C00E66E2E /* AddDOBView.swift */; };
+		4A96E1E12725424C00E66E2E /* AddDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1E02725424C00E66E2E /* AddDateView.swift */; };
 		4A96E1E3272542AE00E66E2E /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1E2272542AE00E66E2E /* ContactDetailView.swift */; };
 		4A96E1E5272542CB00E66E2E /* ContactEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1E4272542CB00E66E2E /* ContactEditView.swift */; };
-		4A96E1E82725432300E66E2E /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1E72725432300E66E2E /* Operation.swift */; };
 		4A96E1EB2725439200E66E2E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1EA2725439200E66E2E /* CoreDataManager.swift */; };
 		4A96E1ED272543AC00E66E2E /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1EC272543AC00E66E2E /* ContactListViewModel.swift */; };
 		4A96E1EF272543C000E66E2E /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1EE272543C000E66E2E /* ContactViewModel.swift */; };
 		4A96E1F2272543ED00E66E2E /* Date.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1F1272543ED00E66E2E /* Date.extension.swift */; };
 		4A96E1F42725440100E66E2E /* String.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1F32725440100E66E2E /* String.extension.swift */; };
 		4A96E1F92725C36D00E66E2E /* ImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 4A96E1F82725C36D00E66E2E /* ImagePicker */; };
-		4A96E1FB2725C3AC00E66E2E /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1FA2725C3AC00E66E2E /* AddImageView.swift */; };
+		4A96E1FB2725C3AC00E66E2E /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1FA2725C3AC00E66E2E /* AddPhotoView.swift */; };
 		4A96E1FD2725C3D200E66E2E /* AddImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1FC2725C3D200E66E2E /* AddImageViewModel.swift */; };
 		4A96E1FF2725C41300E66E2E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1FE2725C41300E66E2E /* ViewModel.swift */; };
 		4A96E2012725C52900E66E2E /* ImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E2002725C52900E66E2E /* ImageLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A69FE482728825B003D88F8 /* ContactAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddView.swift; sourceTree = "<group>"; };
+		4A69FE4B27289D5D003D88F8 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		4A96E1C927253FF100E66E2E /* ContactBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A96E1CC27253FF100E66E2E /* ContactBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBookApp.swift; sourceTree = "<group>"; };
 		4A96E1CE27253FF100E66E2E /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
@@ -37,16 +40,15 @@
 		4A96E1D327253FF800E66E2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A96E1D527253FF800E66E2E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4A96E1D827253FF800E66E2E /* ContactBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactBook.xcdatamodel; sourceTree = "<group>"; };
-		4A96E1E02725424C00E66E2E /* AddDOBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDOBView.swift; sourceTree = "<group>"; };
+		4A96E1E02725424C00E66E2E /* AddDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDateView.swift; sourceTree = "<group>"; };
 		4A96E1E2272542AE00E66E2E /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		4A96E1E4272542CB00E66E2E /* ContactEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditView.swift; sourceTree = "<group>"; };
-		4A96E1E72725432300E66E2E /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		4A96E1EA2725439200E66E2E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4A96E1EC272543AC00E66E2E /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		4A96E1EE272543C000E66E2E /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		4A96E1F1272543ED00E66E2E /* Date.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.extension.swift; sourceTree = "<group>"; };
 		4A96E1F32725440100E66E2E /* String.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.extension.swift; sourceTree = "<group>"; };
-		4A96E1FA2725C3AC00E66E2E /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		4A96E1FA2725C3AC00E66E2E /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		4A96E1FC2725C3D200E66E2E /* AddImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewModel.swift; sourceTree = "<group>"; };
 		4A96E1FE2725C41300E66E2E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4A96E2002725C52900E66E2E /* ImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabel.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A69FE4A27289D3E003D88F8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4A69FE4B27289D5D003D88F8 /* Operation.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		4A96E1C027253FF100E66E2E = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +97,7 @@
 				4A96E1DF272541F200E66E2E /* Views */,
 				4A96E1E92725433C00E66E2E /* ViewModels */,
 				4A96E1F0272543D300E66E2E /* Extensions */,
-				4A96E1E62725430400E66E2E /* Others */,
+				4A69FE4A27289D3E003D88F8 /* Enums */,
 				4A96E1D027253FF800E66E2E /* Assets.xcassets */,
 				4A96E1D527253FF800E66E2E /* Persistence.swift */,
 				4A96E1D727253FF800E66E2E /* ContactBook.xcdatamodeld */,
@@ -108,30 +118,23 @@
 			isa = PBXGroup;
 			children = (
 				4A96E1CE27253FF100E66E2E /* ContactListView.swift */,
-				4A96E1E02725424C00E66E2E /* AddDOBView.swift */,
+				4A69FE482728825B003D88F8 /* ContactAddView.swift */,
 				4A96E1E4272542CB00E66E2E /* ContactEditView.swift */,
 				4A96E1E2272542AE00E66E2E /* ContactDetailView.swift */,
-				4A96E1FA2725C3AC00E66E2E /* AddImageView.swift */,
+				4A96E1E02725424C00E66E2E /* AddDateView.swift */,
+				4A96E1FA2725C3AC00E66E2E /* AddPhotoView.swift */,
 				4A96E2002725C52900E66E2E /* ImageLabel.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		4A96E1E62725430400E66E2E /* Others */ = {
-			isa = PBXGroup;
-			children = (
-				4A96E1E72725432300E66E2E /* Operation.swift */,
-			);
-			path = Others;
 			sourceTree = "<group>";
 		};
 		4A96E1E92725433C00E66E2E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				4A96E1EA2725439200E66E2E /* CoreDataManager.swift */,
+				4A96E1FE2725C41300E66E2E /* ViewModel.swift */,
 				4A96E1EC272543AC00E66E2E /* ContactListViewModel.swift */,
 				4A96E1EE272543C000E66E2E /* ContactViewModel.swift */,
-				4A96E1FE2725C41300E66E2E /* ViewModel.swift */,
 				4A96E1FC2725C3D200E66E2E /* AddImageViewModel.swift */,
 			);
 			path = ViewModels;
@@ -225,13 +228,14 @@
 				4A96E1E3272542AE00E66E2E /* ContactDetailView.swift in Sources */,
 				4A96E2012725C52900E66E2E /* ImageLabel.swift in Sources */,
 				4A96E1EF272543C000E66E2E /* ContactViewModel.swift in Sources */,
-				4A96E1FB2725C3AC00E66E2E /* AddImageView.swift in Sources */,
+				4A96E1FB2725C3AC00E66E2E /* AddPhotoView.swift in Sources */,
 				4A96E1D627253FF800E66E2E /* Persistence.swift in Sources */,
+				4A69FE4C27289D5D003D88F8 /* Operation.swift in Sources */,
 				4A96E1CF27253FF100E66E2E /* ContactListView.swift in Sources */,
 				4A96E1FF2725C41300E66E2E /* ViewModel.swift in Sources */,
 				4A96E1F2272543ED00E66E2E /* Date.extension.swift in Sources */,
-				4A96E1E82725432300E66E2E /* Operation.swift in Sources */,
-				4A96E1E12725424C00E66E2E /* AddDOBView.swift in Sources */,
+				4A96E1E12725424C00E66E2E /* AddDateView.swift in Sources */,
+				4A69FE492728825B003D88F8 /* ContactAddView.swift in Sources */,
 				4A96E1F42725440100E66E2E /* String.extension.swift in Sources */,
 				4A96E1FD2725C3D200E66E2E /* AddImageViewModel.swift in Sources */,
 				4A96E1ED272543AC00E66E2E /* ContactListViewModel.swift in Sources */,

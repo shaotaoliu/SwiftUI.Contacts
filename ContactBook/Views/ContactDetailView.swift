@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ContactDetailView: View {
     
-    @EnvironmentObject var contactListVM: ContactListViewModel
     @Binding var contact: ContactViewModel
     @State private var showEditView = false
     
@@ -42,15 +41,15 @@ struct ContactDetailView: View {
                 Spacer()
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: editButton)
+            .navigationBarItems(trailing: EditButton)
     }
     
-    var editButton: some View {
+    var EditButton: some View {
         Button("Edit") {
             showEditView = true
         }
         .sheet(isPresented: $showEditView) {
-            ContactEditView(contact: $contact, operation: .edit)
+            ContactEditView(contact: contact)
         }
     }
     
@@ -70,6 +69,6 @@ struct ContactDetailView: View {
 
 struct ContactDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactDetailView(contact: ContactListViewModel().contacts[0])
+        ContactDetailView(contact: .constant(ContactViewModel()))
     }
 }

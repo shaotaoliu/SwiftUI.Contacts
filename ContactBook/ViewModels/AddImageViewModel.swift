@@ -3,7 +3,7 @@ import ImagePicker
 
 class AddImageViewModel: ViewModel {
     
-    @Published var showCameraSheet = false
+    @Published var showSheet = false
     @Published var selectedImage: UIImage? = nil
     @Published var sourceType = ImagePicker.SourceType.library
     
@@ -19,7 +19,7 @@ class AddImageViewModel: ViewModel {
         }
         
         self.sourceType = sourceType
-        self.showCameraSheet = true
+        self.showSheet = true
     }
     
     func select() -> Bool {

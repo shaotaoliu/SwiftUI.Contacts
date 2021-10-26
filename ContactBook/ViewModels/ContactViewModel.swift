@@ -1,15 +1,20 @@
-import Foundation
+import SwiftUI
 import CoreData
-import UIKit
 
-class ContactViewModel: ViewModel {
-    private let manager = CoreDataManager.shared
-    private var contact: Contact?
+struct ContactViewModel {
+    
+    var id: NSManagedObjectID? = nil
+    var name: String = ""
+    var dobString: String = ""
+    var phone: String = ""
+    var email: String = ""
+    var address: String = ""
+    var photo: UIImage? = nil
+
+    init() {}
     
     init(contact: Contact) {
-        self.contact = contact
-        
-        // TODO: copy values from model to vm
+        id = contact.objectID
         name = contact.name!
         dobString = contact.dob == nil ? "" : contact.dob!.toDateString()
         phone = contact.phone ?? ""
@@ -18,37 +23,12 @@ class ContactViewModel: ViewModel {
         photo = contact.photo == nil ? nil : UIImage(data: contact.photo!)!
     }
     
-    override init() {
-        super.init()
-        self.contact = nil
-    }
-
-    var id: NSManagedObjectID? {
-        contact?.objectID
-    }
-    
-    @Published var name: String = ""
-    @Published var dobString: String = ""
-    @Published var phone: String = ""
-    @Published var email: String = ""
-    @Published var address: String = ""
-    @Published var photo: UIImage?
-    
-    @discardableResult
-    func save() -> Bool {
-        if name.isEmpty {
-            errorMessage = "Name cannot be empty"
-            return false
-        }
-        
-        do {
-            try manager.save(vm: self)
-        }
-        catch {
-            errorMessage = error.localizedDescription
-            return false
-        }
-        
-        return true
+    func copyTo(_ contact: Contact) {
+        contact.name = name
+        contact.dob = dobString.isEmpty ? nil : dobString.toDate()
+        contact.photo = photo == nil ? nil : photo!.pngData()
+        contact.phone = phone.isEmpty ? nil : phone
+        contact.email = email.isEmpty ? nil : email
+        contact.address = address.isEmpty ? nil : address
     }
 }

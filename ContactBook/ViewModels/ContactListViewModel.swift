@@ -24,9 +24,28 @@ class ContactListViewModel: ViewModel {
     }
     
     @discardableResult
-    func delete(contacts: [ContactViewModel]) -> Bool {
+    func delete(contactVMs: [ContactViewModel]) -> Bool {
         do {
-            try manager.delete(vms: contacts)
+            try manager.delete(contactVMs: contactVMs)
+        }
+        catch {
+            errorMessage = error.localizedDescription
+            return false
+        }
+        
+        return fetch()
+    }
+    
+    
+    @discardableResult
+    func save(contactVM: ContactViewModel) -> Bool {
+        if contactVM.name.isEmpty {
+            errorMessage = "Name cannot be empty"
+            return false
+        }
+        
+        do {
+            try manager.save(contactVM: contactVM)
         }
         catch {
             errorMessage = error.localizedDescription

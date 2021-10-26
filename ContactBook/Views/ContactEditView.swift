@@ -3,11 +3,11 @@ import SwiftUI
 struct ContactEditView: View {
     
     @Environment(\.presentationMode) private var presentationMode
-    @EnvironmentObject var contactListVM: ContactListViewModel
-    @Binding var contact: ContactViewModel
+    @EnvironmentObject var vm: ContactListViewModel
+    @State var contact: ContactViewModel
     @State var showCalendar = false
     @State var showImagePicker = false
-    let operation: Operation
+    var operation: Operation = .edit
     
     var body: some View {
         NavigationView {
@@ -36,7 +36,7 @@ struct ContactEditView: View {
                         showImagePicker = true
                     }
                     .sheet(isPresented: $showImagePicker) {
-                        AddImageView(selectedPhoto: $contact.photo)
+                        AddPhotoView(selectedPhoto: $contact.photo)
                     }
                 }
                 
@@ -54,7 +54,7 @@ struct ContactEditView: View {
                         })
                             .buttonStyle(.borderless)
                             .sheet(isPresented: $showCalendar, content: {
-                                AddDOBView(dobString: $contact.dobString)
+                                AddDateView(dateString: $contact.dobString)
                             })
                         
                         Button(action: {
@@ -93,15 +93,11 @@ struct ContactEditView: View {
     
     var SaveButton: some View {
         Button("Save") {
-            contact.save()
-            contactListVM.fetch()
-            
-            if !contact.hasError {
+            if vm.save(contactVM: contact) {
                 presentationMode.wrappedValue.dismiss()
             }
         }
-        .alert("Error", isPresented: $contact.hasError, presenting: contact.errorMessage, actions: { error in
-            
+        .alert("Error", isPresented: $vm.hasError, presenting: vm.errorMessage, actions: { error in
         }, message: { error in
             Text(error)
         })
@@ -109,7 +105,6 @@ struct ContactEditView: View {
 }
 
 struct ContactEditView_Previews: PreviewProvider {
-    static let manager = CoreDataManager(preview: true)
     static var previews: some View {
         ContactEditView(contact: ContactViewModel(), operation: .add)
             .environmentObject(ContactListViewModel())
