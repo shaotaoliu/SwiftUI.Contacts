@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct ContactAddView: View {
-    @State var contact = ContactViewModel()
+    @State var newContact = ContactViewModel()
     
     var body: some View {
-        ContactEditView(contact: contact, operation: .add)
+        ContactEditView(contact: newContact, operation: .add)
     }
 }
 

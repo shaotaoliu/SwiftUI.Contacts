@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A69FE492728825B003D88F8 /* ContactAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE482728825B003D88F8 /* ContactAddView.swift */; };
 		4A69FE4C27289D5D003D88F8 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE4B27289D5D003D88F8 /* Operation.swift */; };
+		4A69FE4E2728A41D003D88F8 /* ContactPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE4D2728A41D003D88F8 /* ContactPhotoView.swift */; };
 		4A96E1CD27253FF100E66E2E /* ContactBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1CC27253FF100E66E2E /* ContactBookApp.swift */; };
 		4A96E1CF27253FF100E66E2E /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1CE27253FF100E66E2E /* ContactListView.swift */; };
 		4A96E1D127253FF800E66E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A96E1D027253FF800E66E2E /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		4A69FE482728825B003D88F8 /* ContactAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddView.swift; sourceTree = "<group>"; };
 		4A69FE4B27289D5D003D88F8 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		4A69FE4D2728A41D003D88F8 /* ContactPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhotoView.swift; sourceTree = "<group>"; };
 		4A96E1C927253FF100E66E2E /* ContactBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A96E1CC27253FF100E66E2E /* ContactBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBookApp.swift; sourceTree = "<group>"; };
 		4A96E1CE27253FF100E66E2E /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4A96E1CE27253FF100E66E2E /* ContactListView.swift */,
+				4A69FE4D2728A41D003D88F8 /* ContactPhotoView.swift */,
 				4A69FE482728825B003D88F8 /* ContactAddView.swift */,
 				4A96E1E4272542CB00E66E2E /* ContactEditView.swift */,
 				4A96E1E2272542AE00E66E2E /* ContactDetailView.swift */,
@@ -232,6 +235,7 @@
 				4A96E1D627253FF800E66E2E /* Persistence.swift in Sources */,
 				4A69FE4C27289D5D003D88F8 /* Operation.swift in Sources */,
 				4A96E1CF27253FF100E66E2E /* ContactListView.swift in Sources */,
+				4A69FE4E2728A41D003D88F8 /* ContactPhotoView.swift in Sources */,
 				4A96E1FF2725C41300E66E2E /* ViewModel.swift in Sources */,
 				4A96E1F2272543ED00E66E2E /* Date.extension.swift in Sources */,
 				4A96E1E12725424C00E66E2E /* AddDateView.swift in Sources */,

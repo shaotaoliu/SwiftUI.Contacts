@@ -11,25 +11,8 @@ struct ContactDetailView: View {
                     .font(.title2)
                     .bold()
                 
-                if let photo = contact.photo {
-                    Image(uiImage: photo)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200, alignment: .center)
-                        .clipped()
-                        .padding(.bottom)
-                }
-                else {
-                    Image(systemName: "person.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200, alignment: .center)
-                        .opacity(0.3)
-                        .border(.gray, width: 1)
-                        .clipped()
-                        .padding(.bottom)
-                }
-                
+                ContactPhotoView(photo: contact.photo, width: 200, height: 200)
+
                 Form {
                     FieldRow(text: "Name", value: contact.name)
                     FieldRow(text: "Birthday", value: contact.dobString)

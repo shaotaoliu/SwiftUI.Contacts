@@ -17,7 +17,10 @@ struct ContactListView: View {
             List {
                 ForEach(contacts, id: \.id) { contact in
                     NavigationLink(destination: ContactDetailView(contact: $vm.contacts[vm.contacts.firstIndex(where: { $0.id == contact.id })!])) {
-                        Text(contact.name)
+                        HStack(alignment: .center) {
+                            ContactPhotoView(photo: contact.photo, width: 50, height: 50)
+                            Text(contact.name)
+                        }
                     }
                 }
                 .onDelete(perform: deleteContacts)

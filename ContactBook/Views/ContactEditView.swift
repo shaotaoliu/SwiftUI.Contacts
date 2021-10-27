@@ -13,24 +13,7 @@ struct ContactEditView: View {
         NavigationView {
             VStack {
                 VStack {
-                    if let photo = contact.photo {
-                        Image(uiImage: photo)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200, alignment: .center)
-                            .clipped()
-                            .padding(.top)
-                    }
-                    else {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200, alignment: .center)
-                            .opacity(0.3)
-                            .border(.gray, width: 1)
-                            .clipped()
-                            .padding(.top)
-                    }
+                    ContactPhotoView(photo: contact.photo, width: 200, height: 200)
                     
                     Button(contact.photo == nil ? "Add Photo" : "Change Photo") {
                         showImagePicker = true
