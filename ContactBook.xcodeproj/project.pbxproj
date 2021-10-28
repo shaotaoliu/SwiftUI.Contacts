@@ -10,6 +10,8 @@
 		4A69FE492728825B003D88F8 /* ContactAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE482728825B003D88F8 /* ContactAddView.swift */; };
 		4A69FE4C27289D5D003D88F8 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE4B27289D5D003D88F8 /* Operation.swift */; };
 		4A69FE4E2728A41D003D88F8 /* ContactPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE4D2728A41D003D88F8 /* ContactPhotoView.swift */; };
+		4A69FE52272A0DCD003D88F8 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A69FE51272A0DCD003D88F8 /* contacts.json */; };
+		4A69FE55272A124D003D88F8 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69FE54272A124D003D88F8 /* FileReader.swift */; };
 		4A96E1CD27253FF100E66E2E /* ContactBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1CC27253FF100E66E2E /* ContactBookApp.swift */; };
 		4A96E1CF27253FF100E66E2E /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E1CE27253FF100E66E2E /* ContactListView.swift */; };
 		4A96E1D127253FF800E66E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A96E1D027253FF800E66E2E /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		4A69FE482728825B003D88F8 /* ContactAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddView.swift; sourceTree = "<group>"; };
 		4A69FE4B27289D5D003D88F8 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		4A69FE4D2728A41D003D88F8 /* ContactPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPhotoView.swift; sourceTree = "<group>"; };
+		4A69FE51272A0DCD003D88F8 /* contacts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
+		4A69FE54272A124D003D88F8 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		4A96E1C927253FF100E66E2E /* ContactBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A96E1CC27253FF100E66E2E /* ContactBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBookApp.swift; sourceTree = "<group>"; };
 		4A96E1CE27253FF100E66E2E /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
@@ -76,6 +80,17 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		4A69FE53272A120A003D88F8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A96E1D727253FF800E66E2E /* ContactBook.xcdatamodeld */,
+				4A96E1D527253FF800E66E2E /* Persistence.swift */,
+				4A69FE51272A0DCD003D88F8 /* contacts.json */,
+				4A69FE54272A124D003D88F8 /* FileReader.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		4A96E1C027253FF100E66E2E = {
 			isa = PBXGroup;
 			children = (
@@ -100,9 +115,8 @@
 				4A96E1E92725433C00E66E2E /* ViewModels */,
 				4A96E1F0272543D300E66E2E /* Extensions */,
 				4A69FE4A27289D3E003D88F8 /* Enums */,
+				4A69FE53272A120A003D88F8 /* Data */,
 				4A96E1D027253FF800E66E2E /* Assets.xcassets */,
-				4A96E1D527253FF800E66E2E /* Persistence.swift */,
-				4A96E1D727253FF800E66E2E /* ContactBook.xcdatamodeld */,
 				4A96E1D227253FF800E66E2E /* Preview Content */,
 			);
 			path = ContactBook;
@@ -217,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A96E1D427253FF800E66E2E /* Preview Assets.xcassets in Resources */,
+				4A69FE52272A0DCD003D88F8 /* contacts.json in Resources */,
 				4A96E1D127253FF800E66E2E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +249,7 @@
 				4A96E1FB2725C3AC00E66E2E /* AddPhotoView.swift in Sources */,
 				4A96E1D627253FF800E66E2E /* Persistence.swift in Sources */,
 				4A69FE4C27289D5D003D88F8 /* Operation.swift in Sources */,
+				4A69FE55272A124D003D88F8 /* FileReader.swift in Sources */,
 				4A96E1CF27253FF100E66E2E /* ContactListView.swift in Sources */,
 				4A69FE4E2728A41D003D88F8 /* ContactPhotoView.swift in Sources */,
 				4A96E1FF2725C41300E66E2E /* ViewModel.swift in Sources */,

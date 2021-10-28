@@ -1,17 +1,23 @@
 import CoreData
+import UIKit
 
 struct PersistenceController {
     
     static let shared = PersistenceController()
 
     static var preview: PersistenceController = {
+        let contacts: [CodableContact] = FileReader.read(filename: "contacts.json")
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         
-        for i in 1..<10 {
+        for c in contacts {
             let contact = Contact(context: viewContext)
-            contact.name = "Name \(i)"
-            contact.dob = Date()
+            contact.name = c.name
+            contact.dob = c.dob.toDate()
+            contact.phone = c.phone
+            contact.email = c.email
+            contact.address = c.address
+            contact.photo = UIImage(named: c.name)!.pngData()
         }
         
         do {
@@ -40,4 +46,6 @@ struct PersistenceController {
             }
         })
     }
+    
+
 }

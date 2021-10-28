@@ -3,7 +3,7 @@ import Foundation
 class ContactListViewModel: ViewModel {
     
     @Published var contacts: [ContactViewModel] = []
-    private let manager = CoreDataManager.shared
+    private let manager = CoreDataManager.preview
     
     override init() {
         super.init()

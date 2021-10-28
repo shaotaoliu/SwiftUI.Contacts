@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Ana Wong",
+        "dob": "Feb 5, 2000",
+        "phone": "565-232-9066",
+        "email": "ana.wong@gmail.com",
+        "address": "200 Haven blvd\nIrvine, CA"
+    },
+    {
+        "name": "Ian Tran",
+        "dob": "Oct 13, 1990",
+        "phone": "626-212-5678",
+        "email": "ian.tran@gmail.com",
+        "address": "123 Park Ave\nSeattle, WA 56789"
+    },
+    {
+        "name": "Jack Matsuki",
+        "dob": "Oct 2, 1992",
+        "phone": "721-589-2300",
+        "email": "jmatsuki@jmat.com",
+        "address": "80 Lavendar Ct\nRiverside, CA 23880"
+    },
+    {
+        "name": "John Smith",
+        "dob": "Nov 8, 1995",
+        "phone": "562-912-7753",
+        "email": "john.smith@gmail.com",
+        "address": "32 Baker St\nSeattle, WA 24099"
+    },
+    {
+        "name": "Lucy Orion",
+        "dob": "Jan 19, 2006",
+        "phone": "876-232-5632",
+        "email": "lorion@example.com",
+        "address": "5600 Space pkwy\nHouston, TX"
+    }
+]

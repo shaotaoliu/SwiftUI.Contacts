@@ -51,7 +51,7 @@ struct AddPhotoView: View {
                 Spacer()
             }
             .padding(.top, 50)
-            .navigationTitle("Add Image")
+            .navigationTitle("Add Photo")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: CancelButton, trailing: SelectButton)
         }

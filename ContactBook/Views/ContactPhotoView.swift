@@ -19,7 +19,6 @@ struct ContactPhotoView: View {
                 .scaledToFit()
                 .frame(width: width, height: height, alignment: .center)
                 .opacity(0.3)
-                .border(.gray, width: 1)
                 .clipped()
         }
     }
