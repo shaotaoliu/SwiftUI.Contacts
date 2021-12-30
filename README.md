@@ -1,6 +1,6 @@
 # SwiftUI.Contacts
 
-This app shows how to create a list of contacts using Core Data.
+This app is different from SwiftUI.SystemContact which manages contacts using the ContactStore. It manages the contacts using Core Data.
 
 ![image](https://user-images.githubusercontent.com/15805568/139163775-35e37762-7705-4a5d-86a6-27ee77b3162f.png)
 
@@ -12,7 +12,7 @@ Clicking Add Photo allows you to take a photo using camera or select a photo fro
 
 ![image](https://user-images.githubusercontent.com/15805568/139163708-7e682d6e-4364-4d8b-9c3c-17d90f5eec56.png)
 
-Selecting any contact from the list will open the contact detail view.
+Selecting a contact from the list in the main screen will open the contact detail view.
 
 ![image](https://user-images.githubusercontent.com/15805568/139163687-574ce62c-e3bb-4da4-afcf-a2b25d2e007a.png)
 
