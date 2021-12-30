@@ -25,7 +25,6 @@ struct ContactListView: View {
                 }
                 .onDelete(perform: deleteContacts)
             }
-            .searchable(text: $searchText)
             .listStyle(.plain)
             .navigationTitle("Contacts")
             .navigationBarItems(leading: Button(action: {
@@ -37,6 +36,7 @@ struct ContactListView: View {
                 ContactAddView()
             }
         }
+        .searchable(text: $searchText)
     }
     
     private func deleteContacts(offsets: IndexSet) {
